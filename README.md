@@ -37,6 +37,10 @@ For generating 4 games (6 numbers from 1-45):
 git clone https://github.com/ryandau/qlottery.git
 cd qlottery
 
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate
+
 # Install dependencies
 pip install -r requirements.txt
 ```
@@ -60,22 +64,21 @@ python quantum_lottery_generator.py
 ```python
 from quantum_lottery_generator import QuantumLotteryGenerator
 
-# Initialize generator
+# 1. Create an instance
 generator = QuantumLotteryGenerator(
-    numbers_per_game=6,
-    number_range=45,
-    num_games=4
+    numbers_per_game=6,    # How many numbers per game
+    number_range=45,       # Numbers from 1-45
+    num_games=4           # Generate 4 games at once
 )
 
-# Generate lottery games
+# 2. Generate lottery numbers
 result = generator.generate(token="your_ibm_quantum_token")
 
-# Access results
-for i, game in enumerate(result['games'], 1):
-    print(f"Game {i}: {game}")
-
-print(f"Backend used: {result['backend']}")
-print(f"Quantum state: {result['quantum_state']}")
+# 3. Access the results
+print(result['games'])          # [[7,12,22,26,28,40], [6,14,26,28,38,44], ...]
+print(result['backend'])        # 'ibm_brisbane'
+print(result['quantum_state'])  # '100111001100010...'
+print(result['metadata'])       # {'num_qubits': 92, 'job_id': '...', ...}
 ```
 
 ## Output Example
