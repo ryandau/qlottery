@@ -11,8 +11,6 @@ This project leverages quantum superposition to generate multiple lottery games 
 - **Quantum Superposition**: Creates a superposition of all possible game combinations
 - **Simultaneous Generation**: Produces multiple lottery games from a single quantum measurement
 - **IBM Quantum Integration**: Executes on real quantum hardware via IBM Quantum Cloud
-- **Configurable Parameters**: Customizable number range, games per ticket, and numbers per game
-- **Production-Ready**: Clean architecture with proper error handling and logging
 
 ## Technical Details
 
